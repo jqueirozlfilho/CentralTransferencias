@@ -22,6 +22,18 @@ public class RepositorioTreinadorLista implements RepositorioTreinadores{
             this.proximo.inserir(nome, idade, salario, registroFifa, experiencia);
         }
     }
+    public void inserir(Treinador treinador) {
+        if(this.proximo == null){
+            this.treinador.setNome(treinador.getNome());
+            this.treinador.setIdade(treinador.getIdade());
+            this.treinador.setSalario(treinador.getSalario());
+            this.treinador.setRegistroFifa(treinador.getRegistroFifa());
+            this.treinador.setExperiencia(treinador.getExperiencia());
+            this.proximo = new RepositorioTreinadorLista();
+        } else {
+            this.proximo.inserir(treinador);
+        }
+    }
 
     @Override
     public void atualizar(String registroFifa, int experiencia, int idade, double salario){
