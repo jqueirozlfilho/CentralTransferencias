@@ -1,9 +1,13 @@
 package treinador;
 
 public class RepositorioTreinadorArray implements RepositorioTreinadores{
-    private Treinador[] treinador = new Treinador[5];
+    private Treinador[] treinador;
     private int indice;
 
+    public RepositorioTreinadorArray(){
+        this.treinador = new Treinador[5];
+        indice = 0;
+    }
 
     /*
     public void inserirRepositorioTreinador(String nome, int idade, double salario, String registroFifa, int experiencia){
