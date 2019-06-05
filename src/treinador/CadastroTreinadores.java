@@ -9,7 +9,7 @@ public class CadastroTreinadores {
 
     public void cadastrar (Treinador treinador) throws TreinadorJaCadastradoException{
         if(this.repositorioTreinadores.existe(treinador.getRegistroFifa()) == false){
-            this.repositorioTreinadores.inserir(treinador.getNome(), treinador.getIdade(), treinador.getSalario(), treinador.getRegistroFifa(), treinador.getExperiencia());
+            this.repositorioTreinadores.inserir(treinador);
         } else {
             throw new TreinadorJaCadastradoException();
         }
@@ -20,6 +20,7 @@ public class CadastroTreinadores {
         //Em relação ao ano/temporada atual.
         Treinador treinadorAux = repositorioTreinadores.procurar(registroFifa);
         double experienciaAux = treinadorAux.getExperiencia() + (quantidaContratos / 5 * anoTemporada);
-        repositorioTreinadores.atualizar(registroFifa, experienciaAux, treinadorAux.getIdade(), treinadorAux.getSalario());
+        treinadorAux.setExperiencia(experienciaAux);
+        repositorioTreinadores.atualizar(treinadorAux);
     }
 }

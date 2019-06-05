@@ -10,20 +10,6 @@ public class RepositorioTreinadorLista implements RepositorioTreinadores{
     }
 
     @Override
-    public void inserir(String nome, int idade, double salario, String registroFifa, double experiencia) {
-        if(this.proximo == null){
-            this.treinador.setNome(nome);
-            this.treinador.setIdade(idade);
-            this.treinador.setSalario(salario);
-            this.treinador.setRegistroFifa(registroFifa);
-            this.treinador.setExperiencia(experiencia);
-            this.proximo = new RepositorioTreinadorLista();
-        } else {
-            this.proximo.inserir(nome, idade, salario, registroFifa, experiencia);
-        }
-    }
-
-    //Teste:
     public void inserir(Treinador treinador) {
         if(this.proximo == null){
             this.treinador.setNome(treinador.getNome());
@@ -36,16 +22,15 @@ public class RepositorioTreinadorLista implements RepositorioTreinadores{
             this.proximo.inserir(treinador);
         }
     }
-    //
 
     @Override
-    public void atualizar(String registroFifa, double experiencia, int idade, double salario){
-        if(this.treinador.getRegistroFifa().equals(registroFifa)){
-            this.treinador.setExperiencia(experiencia);
-            this.treinador.setIdade(idade);
-            this.treinador.setSalario(salario);
+    public void atualizar(Treinador treinador){
+        if(this.treinador.getRegistroFifa().equals(treinador.getRegistroFifa())){
+            this.treinador.setExperiencia(treinador.getExperiencia());
+            this.treinador.setIdade(treinador.getIdade());
+            this.treinador.setSalario(treinador.getSalario());
         } else {
-            this.proximo.atualizar(registroFifa, experiencia, idade, salario);
+            this.proximo.atualizar(treinador);
         }
     }
 
