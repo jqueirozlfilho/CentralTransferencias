@@ -15,8 +15,11 @@ public class CadastroTreinadores {
         }
     }
 
-    public void atualizaExperiencia(int anoTemporada){
-        //Desenvolver alguma formula para auterar a experiencia dos treinadores
+    public void atualizaExperiencia(String registroFifa, int anoTemporada, int quantidaContratos){
+        //Desenvolver alguma formula para alterar a experiencia dos treinadores
         //Em relação ao ano/temporada atual.
+        Treinador treinadorAux = repositorioTreinadores.procurar(registroFifa);
+        double experienciaAux = treinadorAux.getExperiencia() + (quantidaContratos / 5 * anoTemporada);
+        repositorioTreinadores.atualizar(registroFifa, experienciaAux, treinadorAux.getIdade(), treinadorAux.getSalario());
     }
 }

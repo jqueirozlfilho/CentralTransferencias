@@ -18,7 +18,7 @@ public class RepositorioTreinadorArray implements RepositorioTreinadores{
     */
 
     @Override
-    public void inserir(String nome, int idade, double salario, String registroFifa, int experiencia) {
+    public void inserir(String nome, int idade, double salario, String registroFifa, double experiencia) {
         this.treinador[this.indice].setNome(nome);
         this.treinador[this.indice].setIdade(idade);
         this.treinador[this.indice].setSalario(salario);
@@ -28,10 +28,10 @@ public class RepositorioTreinadorArray implements RepositorioTreinadores{
     }
 
     @Override
-    public void atualizar(String registroFifa, int experiencia, int idade, double salario) {
+    public void atualizar(String registroFifa, double experiencia, int idade, double salario) {
         for(int i = 0; i < treinador.length; i++){
             if(this.treinador[i].getRegistroFifa().equals(registroFifa)){
-                this.treinador[this.indice].setExperiencia(experiencia);
+                this.treinador[this.indice].setExperiencia(experiencia );
                 this.treinador[this.indice].setIdade(idade);
                 this.treinador[this.indice].setSalario(salario);
                 i = treinador.length;

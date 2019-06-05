@@ -10,7 +10,7 @@ public class RepositorioTreinadorLista implements RepositorioTreinadores{
     }
 
     @Override
-    public void inserir(String nome, int idade, double salario, String registroFifa, int experiencia) {
+    public void inserir(String nome, int idade, double salario, String registroFifa, double experiencia) {
         if(this.proximo == null){
             this.treinador.setNome(nome);
             this.treinador.setIdade(idade);
@@ -39,7 +39,7 @@ public class RepositorioTreinadorLista implements RepositorioTreinadores{
     //
 
     @Override
-    public void atualizar(String registroFifa, int experiencia, int idade, double salario){
+    public void atualizar(String registroFifa, double experiencia, int idade, double salario){
         if(this.treinador.getRegistroFifa().equals(registroFifa)){
             this.treinador.setExperiencia(experiencia);
             this.treinador.setIdade(idade);

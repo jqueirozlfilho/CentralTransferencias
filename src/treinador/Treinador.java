@@ -4,7 +4,7 @@ import pessoa.Pessoa;
 
 public class Treinador extends Pessoa {
     private String registroFifa;
-    private int experiencia;
+    private double experiencia;
 
     public Treinador (){
         super();
@@ -27,7 +27,7 @@ public class Treinador extends Pessoa {
         return registroFifa;
     }
 
-    public int getExperiencia() {
+    public double getExperiencia() {
         return experiencia;
     }
 
@@ -35,7 +35,7 @@ public class Treinador extends Pessoa {
         this.registroFifa = registroFifa;
     }
 
-    public void setExperiencia(int experiencia) {
+    public void setExperiencia(double experiencia) {
         this.experiencia = experiencia;
     }
 }
