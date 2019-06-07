@@ -14,7 +14,7 @@ public class Treinador extends Pessoa {
 
     @Override
     public void calculaSalario() {
-
+        super.setSalario(super.getSalario()*experiencia);
     }
 
     public Treinador (String nome, int idade, double salario, String registroFifa, int experiencia){
