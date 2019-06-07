@@ -1,17 +1,17 @@
 package jogador;
 
 public interface RepositorioJogadores {
-	public void inserir (String nome, int idade, double salario, int tempoDeContrato, double valor, double nota);
+	public void inserir (Jogador jogador);
 	
-	public void atualizar (Jogador jogador, String nome, int idade, double salario, int tempoDeContrato, double valor, double nota)
+	public void atualizar (Jogador jogador)
 		throws JogadorNaoEncontradoException;
 	
-	public void remover (Jogador jogador, String nome) 
+	public void remover (String nome) 
 		throws JogadorNaoEncontradoException;
 	
-	public Jogador procurar (Jogador jogador, String nome)
+	public Jogador procurar (String nome)
 		throws JogadorNaoEncontradoException;
 	
-	public boolean existe (Jogador jogador, String nome)
+	public boolean existe (String nome)
 		throws JogadorNaoEncontradoException;
 }
