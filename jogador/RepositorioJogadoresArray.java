@@ -1,5 +1,5 @@
 package jogador;
-import pessoa.Pessoa;
+
 public class RepositorioJogadoresArray implements RepositorioJogadores{
 	private Jogador [] jogador = new Jogador [100];
 	private int indice = 0;
@@ -16,45 +16,45 @@ public class RepositorioJogadoresArray implements RepositorioJogadores{
 		this.jogador = jogador;
 	}
 
-	public void inserir (String nome, int idade, double salario, int tempoDeContrato, double valor, double nota) {
+	public void inserir (Jogador jogador) {
 		if (indice < this.jogador.length) {
-			jogador [indice].setNome(nome);
-			jogador [indice].setSalario(salario);
-			jogador [indice].setIdade(idade);
-			jogador [indice].setTempoDeContrato(tempoDeContrato);
-			jogador [indice].setValor(valor);
-			jogador [indice].setNota(nota);
+			this.jogador [indice].setNome(jogador.getNome());
+			this.jogador [indice].setSalario(jogador.getSalario());
+			this.jogador [indice].setIdade(jogador.getIdade());
+			this.jogador [indice].setTempoDeContrato(jogador.getTempoDeContrato());
+			this.jogador [indice].setValor(jogador.getValor());
+			this.jogador [indice].setNota(jogador.getNota());
 			indice = indice + 1;
-		}else {
+		} else {
 			Jogador [] aux = new Jogador [(this.jogador.length + 1)*2];
 			for (int c = 0; c < this.jogador.length; c++) {
-				aux [c] = jogador [c];
+				aux [c] = this.jogador [c];
 			}
-			jogador = aux;
-			jogador [indice].setNome(nome);
-			jogador [indice].setSalario(salario);
-			jogador [indice].setIdade(idade);
-			jogador [indice].setTempoDeContrato(tempoDeContrato);
-			jogador [indice].setValor(valor);
-			jogador [indice].setNota(nota);
+			this.jogador = aux;
+			this.jogador [indice].setNome(jogador.getNome());
+			this.jogador [indice].setSalario(jogador.getSalario());
+			this.jogador [indice].setIdade(jogador.getIdade());
+			this.jogador [indice].setTempoDeContrato(jogador.getTempoDeContrato());
+			this.jogador [indice].setValor(jogador.getValor());
+			this.jogador [indice].setNota(jogador.getNota());
 			indice++;
 		}
 	}
 
-	public void atualizar(Jogador jogador, String nome, int idade, double salario, int tempoDeContrato, double valor, double nota) throws JogadorNaoEncontradoException {
+	public void atualizar(Jogador jogador) throws JogadorNaoEncontradoException {
 		for (int c = 0; c < this.jogador.length; c++) {
-			if (this.jogador[c].getNome().equals(nome)) {
-				this.jogador[c].setNome(nome);
-				this.jogador[c].setIdade(idade);
-				this.jogador[c].setSalario(salario);
-				this.jogador[c].setTempoDeContrato(tempoDeContrato);
-				this.jogador[c].setValor(valor);
-				this.jogador[c].setNota(nota);
+			if (this.jogador[c].getNome().equals(jogador.getNome())) {
+				this.jogador[c].setNome(jogador.getNome());
+				this.jogador[c].setIdade(jogador.getIdade());
+				this.jogador[c].setSalario(jogador.getSalario());
+				this.jogador[c].setTempoDeContrato(jogador.getTempoDeContrato());
+				this.jogador[c].setValor(jogador.getValor());
+				this.jogador[c].setNota(jogador.getNota());
 			}
 		}
 	}
 
-	public void remover(Jogador jogador, String nome) throws JogadorNaoEncontradoException {
+	public void remover(String nome) throws JogadorNaoEncontradoException {
 		for (int c = 0; c < this.jogador.length; c++) {
 			if (this.jogador[c].getNome().equals(nome)) {
 				indice--;
@@ -63,7 +63,7 @@ public class RepositorioJogadoresArray implements RepositorioJogadores{
 		}
 	}
 
-	public Jogador procurar(Jogador jogador, String nome) throws JogadorNaoEncontradoException {
+	public Jogador procurar(String nome) throws JogadorNaoEncontradoException {
 		for (int c = 0; c < this.jogador.length; c++) {
 			if (this.jogador[c].getNome().equals(nome)) {
 				return this.jogador[c];
@@ -72,7 +72,7 @@ public class RepositorioJogadoresArray implements RepositorioJogadores{
 		return this.jogador[indice];
 	}
 
-	public boolean existe(Jogador jogador, String nome) throws JogadorNaoEncontradoException {
+	public boolean existe(String nome) throws JogadorNaoEncontradoException {
 		for (int c = 0; c < this.jogador.length; c++) {
 			if (this.jogador[c].getNome().equals(nome)) {
 				return true;

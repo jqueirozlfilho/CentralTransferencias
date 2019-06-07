@@ -1,15 +1,15 @@
 package jogador;
 
 import pessoa.Pessoa;
-
-public class Jogador extends Pessoa{
+// Salário do jogador vai depender da nota e o do treinador da experiência
+public class Jogador extends Pessoa {
 	private int tempoDeContrato;
 	private double valor;
 	private Pessoa pessoa;
 	private double nota;
-	
-	public Jogador(String nome, int idade, double salario, int tempoDeContrato, double valor, double nota) {
-		super (nome, idade, nota);
+
+	public Jogador() {
+		super ();
 		this.tempoDeContrato = 0;
 		this.valor = 0;
 		this.setPessoa(null);
@@ -46,6 +46,10 @@ public class Jogador extends Pessoa{
 		this.nota = nota;
 	}
 	
+	public void calculaSalario() {
+		super.setSalario(super.getSalario() + nota*10);  
+	}
+
 }
 /*
 class Habilidades extends Jogador {
