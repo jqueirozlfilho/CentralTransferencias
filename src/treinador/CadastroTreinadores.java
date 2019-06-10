@@ -4,7 +4,7 @@ public class CadastroTreinadores {
     private RepositorioTreinadores repositorioTreinadores;
 
     public CadastroTreinadores(RepositorioTreinadores repositorio){
-        this.repositorioTreinadores = repositorio;
+        repositorioTreinadores = repositorio;
     }
 
     public void cadastrar (Treinador treinador) throws TreinadorJaCadastradoException{
@@ -15,6 +15,31 @@ public class CadastroTreinadores {
         }
     }
 
+    public void remover (Treinador treinador) throws TreinadorNaoEcontradoException {
+        if(this.repositorioTreinadores.existe(treinador.getRegistroFifa()) == true){
+            this.repositorioTreinadores.remover(treinador.getRegistroFifa());
+        } else {
+            throw new TreinadorNaoEcontradoException();
+        }
+    }
+
+    public void atualizar (Treinador treinador) throws TreinadorNaoEcontradoException {
+        if(this.repositorioTreinadores.existe(treinador.getRegistroFifa()) == true){
+            this.repositorioTreinadores.atualizar(treinador);
+        } else {
+            throw new TreinadorNaoEcontradoException();
+        }
+    }
+
+    public void procurar (Treinador treinador) throws TreinadorNaoEcontradoException {
+        if(this.repositorioTreinadores.existe(treinador.getRegistroFifa()) == true){
+            this.repositorioTreinadores.procurar(treinador.getRegistroFifa());
+        } else {
+            throw new TreinadorNaoEcontradoException();
+        }
+    }
+
+    /*
     public void atualizaExperiencia(String registroFifa, int anoTemporada, int quantidaContratos){
         //Desenvolver alguma formula para alterar a experiencia dos treinadores
         //Em relação ao ano/temporada atual.
@@ -23,4 +48,5 @@ public class CadastroTreinadores {
         treinadorAux.setExperiencia(experienciaAux);
         repositorioTreinadores.atualizar(treinadorAux);
     }
+    */
 }

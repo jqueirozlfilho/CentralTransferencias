@@ -17,11 +17,11 @@ public class Treinador extends Pessoa {
         super.setSalario(super.getSalario()*experiencia);
     }
 
-    public Treinador (String nome, int idade, double salario, String registroFifa, int experiencia){
+    /*public Treinador (String nome, int idade, double salario, String registroFifa, int experiencia){
         super(nome, idade, salario);
         this.registroFifa = registroFifa;
         this.experiencia = experiencia;
-    }
+    }*/
 
     public String getRegistroFifa() {
         return registroFifa;
