@@ -1,11 +1,13 @@
 package fachada;
 
 import treinador.*;
+import jogador.*;
+import time.*;
 
 public class Fachada {
-    //private CadastroTimes times;
+    private CadastroTimes times;
     private CadastroTreinadores cadastroTreinadores;
-    //private CadastroJogadores jogadores;
+    private CadastroJogadores jogadores;
     //private CadastroHabilidades habilidades;
 
     public Fachada(RepositorioTreinadores repositorioTreinadores){
@@ -17,14 +19,14 @@ public class Fachada {
         //Metodo exemplo, da aula 14
         cadastroTreinadores.cadastrar(treinador);
     }
-    public void removerTreinador (Treinador treinador) throws TreinadorNaoEcontradoException {
-        cadastroTreinadores.remover(treinador);
-    }
-    public  void atualizarTreinador (Treinador treinador) throws TreinadorNaoEcontradoException {
+    public  void atualizarTreinador (Treinador treinador) throws TreinadorNaoEncontradoException {
         cadastroTreinadores.atualizar(treinador);
     }
-    public void procurarTreinador (Treinador treinador) throws TreinadorNaoEcontradoException {
-        cadastroTreinadores.procurar(treinador);
+    public void removerTreinador (String registroFifa) throws TreinadorNaoEncontradoException {
+        cadastroTreinadores.remover(registroFifa);
+    }
+    public Treinador procurarTreinador (String registroFifa) throws TreinadorNaoEncontradoException {
+        return cadastroTreinadores.procurar(registroFifa);
     }
 
     /*

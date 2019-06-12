@@ -15,27 +15,27 @@ public class CadastroTreinadores {
         }
     }
 
-    public void remover (Treinador treinador) throws TreinadorNaoEcontradoException {
-        if(this.repositorioTreinadores.existe(treinador.getRegistroFifa()) == true){
-            this.repositorioTreinadores.remover(treinador.getRegistroFifa());
-        } else {
-            throw new TreinadorNaoEcontradoException();
-        }
-    }
-
-    public void atualizar (Treinador treinador) throws TreinadorNaoEcontradoException {
+    public void atualizar (Treinador treinador) throws TreinadorNaoEncontradoException {
         if(this.repositorioTreinadores.existe(treinador.getRegistroFifa()) == true){
             this.repositorioTreinadores.atualizar(treinador);
         } else {
-            throw new TreinadorNaoEcontradoException();
+            throw new TreinadorNaoEncontradoException();
         }
     }
 
-    public Treinador procurar (Treinador treinador) throws TreinadorNaoEcontradoException {
-        if(this.repositorioTreinadores.existe(treinador.getRegistroFifa()) == true){
-            return this.repositorioTreinadores.procurar(treinador.getRegistroFifa());
+    public void remover (String registroFifa) throws TreinadorNaoEncontradoException {
+        if(this.repositorioTreinadores.existe(registroFifa) == true){
+            this.repositorioTreinadores.remover(registroFifa);
         } else {
-            throw new TreinadorNaoEcontradoException();
+            throw new TreinadorNaoEncontradoException();
+        }
+    }
+
+    public Treinador procurar (String registroFifa) throws TreinadorNaoEncontradoException {
+        if(this.repositorioTreinadores.existe(registroFifa) == true){
+            return this.repositorioTreinadores.procurar(registroFifa);
+        } else {
+            throw new TreinadorNaoEncontradoException();
         }
     }
 
