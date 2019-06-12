@@ -2,6 +2,7 @@ package jogador;
 
 import pessoa.Pessoa;
 // Salário do jogador vai depender da nota e o do treinador da experiência
+// Teste
 public class Jogador extends Pessoa {
 	private int tempoDeContrato;
 	private double valor;
