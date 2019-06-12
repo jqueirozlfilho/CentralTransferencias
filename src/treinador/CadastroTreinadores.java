@@ -31,9 +31,9 @@ public class CadastroTreinadores {
         }
     }
 
-    public void procurar (Treinador treinador) throws TreinadorNaoEcontradoException {
+    public Treinador procurar (Treinador treinador) throws TreinadorNaoEcontradoException {
         if(this.repositorioTreinadores.existe(treinador.getRegistroFifa()) == true){
-            this.repositorioTreinadores.procurar(treinador.getRegistroFifa());
+            return this.repositorioTreinadores.procurar(treinador.getRegistroFifa());
         } else {
             throw new TreinadorNaoEcontradoException();
         }
