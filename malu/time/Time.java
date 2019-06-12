@@ -3,6 +3,7 @@ package time;
 import pessoa.Pessoa;
 import jogador.RepositorioJogadores;
 import treinador.Treinador;
+import treinador.Treinador;
 
 public class Time {
 	private String nome;
