@@ -7,15 +7,15 @@ public class CadastroJogadores {
 		this.repositorioJogadores = repositorio;
 	}
 	public void cadastrar(Jogador jogador) throws JogadorJaCadastradoException, JogadorNaoEncontradoException {
-		if (!this.repositorioJogadores.existe(jogador.getNome())) {
+		if (this.repositorioJogadores.existe(jogador.getNome()) == false) {
 			this.repositorioJogadores.inserir(jogador);
 		} else {
 			throw new JogadorJaCadastradoException();
 		}
 	}
-	public void remover(Jogador jogador) throws JogadorNaoEncontradoException {
-		if (this.repositorioJogadores.existe(jogador.getNome()) == true) {
-			this.repositorioJogadores.remover(jogador.getNome());
+	public void remover(String nome) throws JogadorNaoEncontradoException {
+		if (this.repositorioJogadores.existe(nome) == true) {
+			this.repositorioJogadores.remover(nome);
 		} else {
 			throw new JogadorNaoEncontradoException();
 		}
@@ -27,9 +27,9 @@ public class CadastroJogadores {
 			throw new JogadorNaoEncontradoException();
 		}
 	}
-	public void procurar(Jogador jogador) throws JogadorNaoEncontradoException{
-		if (this.repositorioJogadores.existe(jogador.getNome()) == true) {
-			this.repositorioJogadores.procurar(jogador.getNome());
+	public Jogador procurar(String nome) throws JogadorNaoEncontradoException{
+		if (this.repositorioJogadores.existe(nome) == true) {
+			return this.repositorioJogadores.procurar(nome);
 		} else {
 			throw new JogadorNaoEncontradoException();
 		}

@@ -1,16 +1,18 @@
-package time;
+package fachada;
 import treinador.*;
+import jogador.*;
 import time.*;
 
 public class Fachada {
 		private CadastroTimes cadastroTimes;
 	    private CadastroTreinadores cadastroTreinadores;
-	    //private CadastroJogadores jogadores;
+	    private CadastroJogadores cadastroJogadores;
 	    //private CadastroHabilidades habilidades;
 
-	    public Fachada(RepositorioTime repositorioTime){
+	    public Fachada(RepositorioTime repositorioTime, RepositorioTreinadores repositorioTreinadores, RepositorioJogadores repositorioJogadores){
 	        this.cadastroTimes = new CadastroTimes(repositorioTime);
 	        this.cadastroTreinadores = new CadastroTreinadores(repositorioTreinadores);
+	        this.cadastroJogadores = new CadastroJogadores(repositorioJogadores);
 	        //this.cadastroTreinadores = new CadastroTreinadores(repositorioTreinadores);
 	    }
 
@@ -32,7 +34,7 @@ public class Fachada {
 	    public void cadastrarTreinador (Treinador treinador) throws TreinadorJaCadastradoException {
 	        //Metodo exemplo, da aula 14
 	        cadastroTreinadores.cadastrar(treinador);
-	    }\
+	    }
 	    public  void atualizarTreinador (Treinador treinador) throws TreinadorNaoEncontradoException {
 	        cadastroTreinadores.atualizar(treinador);
 	    }
@@ -42,7 +44,19 @@ public class Fachada {
 	    public Treinador procurarTreinador (String registroFifa) throws TreinadorNaoEncontradoException {
 	        return cadastroTreinadores.procurar(registroFifa);
 	    }
-	    
+	  //Igor (Jogador)
+	    public void cadastrarJogador (Jogador jogador) throws JogadorJaCadastradoException, JogadorNaoEncontradoException {
+	    	cadastroJogadores.cadastrar(jogador);
+	    }
+	    public void removerJogador (String nome) throws JogadorNaoEncontradoException {
+	        cadastroJogadores.remover(nome);
+	    }
+	    public  void atualizarJogador (Jogador jogador) throws JogadorNaoEncontradoException {
+	        cadastroJogadores.atualizar(jogador);
+	    }
+	    public Jogador procurarJogador (String nome) throws JogadorNaoEncontradoException {
+	    	 return cadastroJogadores.procurar(nome);
+	    }
 	    /*
 	    public void comprarJogador (Time time, Jogador jogador) throws VerbaInsuficienteException{
 	        // double valorJogador = jogador.getValor();
