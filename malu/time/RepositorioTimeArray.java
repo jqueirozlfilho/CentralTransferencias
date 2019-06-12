@@ -45,12 +45,6 @@ public class RepositorioTimeArray implements RepositorioTime{
 	}
 
 	@Override
-	public void atualizar(Time time) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public Time procurar(String nome) {
 		boolean achou = false;
 		Time returning = null;
@@ -74,7 +68,15 @@ public class RepositorioTimeArray implements RepositorioTime{
 				achou = true;
 			}
 		}
-		return achou;
-		
+		return achou;	
+	}
+
+	@Override
+	public void atualizar(String nome, Time time) {
+		for (int i = 0; i < times.length; i++) {
+			if (nome.equals(times[i].getNome())) {
+				times[i] = time;
+			}		
+		}
 	}
 }
