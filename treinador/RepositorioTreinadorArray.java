@@ -38,6 +38,7 @@ public class RepositorioTreinadorArray implements RepositorioTreinadores{
             this.treinador[this.indice].setSalario(treinador.getSalario());
             this.treinador[this.indice].setRegistroFifa(treinador.getRegistroFifa());
             this.treinador[this.indice].setExperiencia(treinador.getExperiencia());
+            indice++;
         }
     }
 
