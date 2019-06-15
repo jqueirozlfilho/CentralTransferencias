@@ -2,7 +2,7 @@ package time;
 
 import pessoa.Pessoa;
 import jogador.RepositorioJogadores;
-import treinador.Treinador;
+import treinador.RepositorioTreinadores;
 import treinador.Treinador;
 
 public class Time {

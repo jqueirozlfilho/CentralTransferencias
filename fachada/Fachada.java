@@ -29,8 +29,8 @@ public class Fachada {
 	    public void procurarTime (String nome) throws TimeNaoEncontradoException {
 	        cadastroTimes.procurar(nome);
 	    }
-	    
-	  //Henrique (Treinador)
+
+	    //Henrique (Treinador)
 	    public void cadastrarTreinador (Treinador treinador) throws TreinadorJaCadastradoException {
 	        //Metodo exemplo, da aula 14
 	        cadastroTreinadores.cadastrar(treinador);
@@ -44,7 +44,8 @@ public class Fachada {
 	    public Treinador procurarTreinador (String registroFifa) throws TreinadorNaoEncontradoException {
 	        return cadastroTreinadores.procurar(registroFifa);
 	    }
-	  //Igor (Jogador)
+
+	    //Igor (Jogador)
 	    public void cadastrarJogador (Jogador jogador) throws JogadorJaCadastradoException, JogadorNaoEncontradoException {
 	    	cadastroJogadores.cadastrar(jogador);
 	    }
@@ -74,6 +75,12 @@ public class Fachada {
 	        //Método para atualizar idade, experiência, salário...
 	    }
 	    */
+
+	    //TESTE
+		public void atalizaIdade (){
+
+		}
+
 
 	}
 
