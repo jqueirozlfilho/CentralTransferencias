@@ -1,9 +1,9 @@
 package time;
 
 public class CadastroTimes {
-	private RepositorioTime times;
+	private RepositorioTimes times;
 	
-	public CadastroTimes (RepositorioTime rep) {
+	public CadastroTimes (RepositorioTimes rep) {
 		times = rep;
 	}
 

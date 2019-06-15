@@ -25,6 +25,7 @@ public class RepositorioTreinadorArray implements RepositorioTreinadores{
             this.treinador[this.indice].setSalario(treinador.getSalario());
             this.treinador[this.indice].setRegistroFifa(treinador.getRegistroFifa());
             this.treinador[this.indice].setExperiencia(treinador.getExperiencia());
+            this.treinador[this.indice].setTimeAtual(treinador.getTimeAtual());
             indice++;
         } else {
             Treinador[] aux = new Treinador[(this.treinador.length+1)*2];
@@ -47,6 +48,7 @@ public class RepositorioTreinadorArray implements RepositorioTreinadores{
                 this.treinador[this.indice].setExperiencia(treinador.getExperiencia());
                 this.treinador[this.indice].setIdade(treinador.getIdade());
                 this.treinador[this.indice].setSalario(treinador.getSalario());
+                this.treinador[this.indice].setTimeAtual(treinador.getTimeAtual());
                 i = this.treinador.length;
             }
         }

@@ -1,12 +1,10 @@
 package time;
 
-import time.Time;
-
-public class RepositorioTimeLista implements RepositorioTime {
+public class RepositorioTimesLista implements RepositorioTimes {
 	private Time time;
-	private RepositorioTimeLista next;
+	private RepositorioTimesLista next;
 	
-	public RepositorioTimeLista () {
+	public RepositorioTimesLista() {
 		this.time = null;
 		this.next = null;
 	}
@@ -14,7 +12,7 @@ public class RepositorioTimeLista implements RepositorioTime {
 	public void inserir (Time time) {
 		if (this.time == null){
 			this.time = time;
-			this.next = new RepositorioTimeLista ();
+			this.next = new RepositorioTimesLista();
 		} else{
 			this.next.inserir(time);
 		}

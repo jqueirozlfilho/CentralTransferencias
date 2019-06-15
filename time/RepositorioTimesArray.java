@@ -1,10 +1,10 @@
 package time;
 
-public class RepositorioTimeArray implements RepositorioTime{
+public class RepositorioTimesArray implements RepositorioTimes {
 	private Time[] times;
 	private int indice;
 	
-	public RepositorioTimeArray (int tam) {
+	public RepositorioTimesArray(int tam) {
 		this.times = new Time [10];
 		this.indice = 0;
 	}
@@ -29,7 +29,7 @@ public class RepositorioTimeArray implements RepositorioTime{
 		for (int i = 0; i < times.length && !remover; i++) {
 			if (nome.equals(times[i].getNome())){
 				remover = true;
-				// subscrevendo a informação do proximo para remover o atual
+				// subscrevendo a informaï¿½ï¿½o do proximo para remover o atual
 				for (int j = i; i < times.length; j++) {
 					times[j] = times [j+1];
 				}

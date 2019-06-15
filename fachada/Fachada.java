@@ -9,7 +9,7 @@ public class Fachada {
 	    private CadastroJogadores cadastroJogadores;
 	    //private CadastroHabilidades habilidades;
 
-	    public Fachada(RepositorioTime repositorioTime, RepositorioTreinadores repositorioTreinadores, RepositorioJogadores repositorioJogadores){
+	    public Fachada(RepositorioTimes repositorioTime, RepositorioTreinadores repositorioTreinadores, RepositorioJogadores repositorioJogadores){
 	        this.cadastroTimes = new CadastroTimes(repositorioTime);
 	        this.cadastroTreinadores = new CadastroTreinadores(repositorioTreinadores);
 	        this.cadastroJogadores = new CadastroJogadores(repositorioJogadores);
