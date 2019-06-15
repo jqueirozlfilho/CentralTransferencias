@@ -8,7 +8,7 @@ public class RepositorioTimesArray implements RepositorioTimes {
 		this.times = new Time [10];
 		this.indice = 0;
 	}
-	
+
 	public void inserir (Time time) {
 		if (times[indice] == null) {
 			times [indice] = time;
@@ -23,7 +23,16 @@ public class RepositorioTimesArray implements RepositorioTimes {
 			indice = indice + 1;
 		}
 	}
-	
+
+	@Override
+	public void atualizar(Time time) {
+		for (int i = 0; i < times.length; i++) {
+			if (times[i].getNome().equals(time.getNome())) {
+				times[i] = time;
+			}
+		}
+	}
+
 	public void remover (String nome) {
 		boolean remover = false;
 		for (int i = 0; i < times.length && !remover; i++) {
@@ -53,9 +62,9 @@ public class RepositorioTimesArray implements RepositorioTimes {
 				achou = true;
 				returning = times[i];
 			}
-		} 
+		}
 		if (achou == false) {
-				
+
 		}
 		return returning;
 	}
@@ -68,15 +77,6 @@ public class RepositorioTimesArray implements RepositorioTimes {
 				achou = true;
 			}
 		}
-		return achou;	
-	}
-
-	@Override
-	public void atualizar(String nome, Time time) {
-		for (int i = 0; i < times.length; i++) {
-			if (nome.equals(times[i].getNome())) {
-				times[i] = time;
-			}		
-		}
+		return achou;
 	}
 }

@@ -24,7 +24,7 @@ public class Fachada {
 	        cadastroTimes.remover(nome);
 	    }
 	    public  void atualizarTime (String nome, Time time) throws TimeNaoEncontradoException {
-	        cadastroTimes.atualizar(nome, time);
+	        cadastroTimes.atualizar(time);
 	    }
 	    public void procurarTime (String nome) throws TimeNaoEncontradoException {
 	        cadastroTimes.procurar(nome);
