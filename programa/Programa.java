@@ -15,23 +15,23 @@ public class Programa {
             System.out.println(e.getMessage());
         }
 
-        try {
-            //Treinador do Barcelona
-            fachada.cadastrarTreinador(new Treinador("Ernesto", 55, 9000, "02-E", 40));
+        try { //Treinador do Barcelona
+            Treinador ernesto = new Treinador("Ernesto", 55, 9000, "02-E", 40);
+            fachada.cadastrarTreinador(ernesto);
         } catch (TreinadorJaCadastradoException e) {
             System.out.println(e.getMessage());
         }
 
-        try {
-            //Treinador do Bayern
-            fachada.cadastrarTreinador(new Treinador("Niko", 47, 8000, "03-N", 30));
+        try { //Treinador do Bayern
+            Treinador niko = new Treinador("Niko", 47, 8000, "03-N", 30);
+            fachada.cadastrarTreinador(niko);
         } catch (TreinadorJaCadastradoException e) {
             System.out.println(e.getMessage());
         }
 
-        try {
-            //Treinador do City
-            fachada.cadastrarTreinador(new Treinador("Guardiola", 48, 8000, "04-G", 50));
+        try { //Treinador do City
+            Treinador guardiola = new Treinador("Guardiola", 48, 8000, "04-G", 50);
+            fachada.cadastrarTreinador(guardiola);
         } catch (TreinadorJaCadastradoException e) {
             System.out.println(e.getMessage());
         }
@@ -54,25 +54,37 @@ public class Programa {
         }
 
         try {
-            System.out.println(fachada.procurarTreinador("02-E"));
+            Treinador treinadorAux = fachada.procurarTreinador("02-E");
+            System.out.println(treinadorAux.getNome());
+            System.out.println(treinadorAux.getIdade());
+            System.out.println(treinadorAux.getSalario());
         } catch (TreinadorNaoEncontradoException e) {
             System.out.println(e.getMessage());
         }
 
         try {
-            System.out.println(fachada.procurarTreinador("03-N"));
+            Treinador treinadorAux = fachada.procurarTreinador("03-N");
+            System.out.println(treinadorAux.getNome());
+            System.out.println(treinadorAux.getIdade());
+            System.out.println(treinadorAux.getSalario());
         } catch (TreinadorNaoEncontradoException e) {
             System.out.println(e.getMessage());
         }
 
         try {
-            System.out.println(fachada.procurarTreinador("04-G"));
+            Treinador treinadorAux = fachada.procurarTreinador("04-G");
+            System.out.println(treinadorAux.getNome());
+            System.out.println(treinadorAux.getIdade());
+            System.out.println(treinadorAux.getSalario());
         } catch (TreinadorNaoEncontradoException e) {
             System.out.println(e.getMessage());
         }
 
         try {
-            System.out.println(fachada.procurarTreinador("05-T"));
+            Treinador treinadorAux = fachada.procurarTreinador("05-T");
+            System.out.println(treinadorAux.getNome());
+            System.out.println(treinadorAux.getIdade());
+            System.out.println(treinadorAux.getSalario());
         } catch (TreinadorNaoEncontradoException e) {
             System.out.println(e.getMessage());
         }
