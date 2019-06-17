@@ -62,29 +62,6 @@ public class Fachada {
 	    public Jogador procurarJogador (String nome) throws JogadorNaoEncontradoException {
 	    	 return cadastroJogadores.procurar(nome);
 	    }
-	    /*
-	    public void comprarJogador (Time time, Jogador jogador) throws VerbaInsuficienteException{
-	        // double valorJogador = jogador.getValor();
-	         * double verbaTime = time.getVerba();
-	         * if (valorJogador < verbaTime){
-	         * 		remover jogador do time de origem
-	         * 		adicionar valor do jogador a verba do time de origem
-	         * 		time.setVerba(verbaTime-valorJogador);
-	         * } else {
-	         * 		throws new VerbaInsuficienteException();
-	         * }
-	        //Método principal do projeto
-	    }
-	    public void atualizarInformações (){
-	        //Método para atualizar idade, experiência, salário...
-	    }
-	    */
-
-	    //TESTE
-		public void atalizaIdade (){
-
-		}
-
 
 	}
 

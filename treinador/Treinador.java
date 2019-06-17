@@ -9,7 +9,7 @@ public class Treinador extends Pessoa {
     public Treinador (String nome, int idade, double salario, String registroFifa, double experiencia){
         super(nome, idade, salario);
         this.registroFifa = registroFifa;
-        this.experiencia = 0;
+        this.experiencia = experiencia;
     }
 
     @Override

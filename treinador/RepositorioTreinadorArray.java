@@ -9,26 +9,10 @@ public class RepositorioTreinadorArray implements RepositorioTreinadores{
         indice = 0;
     }
 
-    /*
-    public void inserirRepositorioTreinador(String nome, int idade, double salario, String registroFifa, int experiencia){
-        for(int i =0; i < 5; i++){
-            treinador[i] = ;
-        }
-    }
-    */
-
     @Override
     public void inserir(Treinador treinador) {
         if(indice < this.treinador.length) {
             this.treinador[this.indice] = treinador;
-            /*
-            this.treinador[this.indice].setNome(treinador.getNome());
-            this.treinador[this.indice].setIdade(treinador.getIdade());
-            this.treinador[this.indice].setSalario(treinador.getSalario());
-            this.treinador[this.indice].setRegistroFifa(treinador.getRegistroFifa());
-            this.treinador[this.indice].setExperiencia(treinador.getExperiencia());
-            indice++;
-            */
             indice++;
         } else {
             Treinador[] aux = new Treinador[(this.treinador.length+1)*2];
@@ -37,13 +21,6 @@ public class RepositorioTreinadorArray implements RepositorioTreinadores{
             }
             this.treinador = aux;
             this.treinador[this.indice] = treinador;
-            /*
-            this.treinador[this.indice].setNome(treinador.getNome());
-            this.treinador[this.indice].setIdade(treinador.getIdade());
-            this.treinador[this.indice].setSalario(treinador.getSalario());
-            this.treinador[this.indice].setRegistroFifa(treinador.getRegistroFifa());
-            this.treinador[this.indice].setExperiencia(treinador.getExperiencia());
-            */
             indice++;
         }
     }
@@ -52,9 +29,7 @@ public class RepositorioTreinadorArray implements RepositorioTreinadores{
     public void atualizar(Treinador treinador) {
         for(int i = 0; i < this.treinador.length; i++){
             if(this.treinador[i].getRegistroFifa().equals(treinador.getRegistroFifa())){
-                this.treinador[this.indice].setExperiencia(treinador.getExperiencia());
-                this.treinador[this.indice].setIdade(treinador.getIdade());
-                this.treinador[this.indice].setSalario(treinador.getSalario());
+                this.treinador[this.indice] = treinador;
                 i = this.treinador.length;
             }
         }
@@ -63,9 +38,10 @@ public class RepositorioTreinadorArray implements RepositorioTreinadores{
     @Override
     public void remover(String registroFifa) {
         for(int i = 0; i < treinador.length; i++){
-            if(treinador[i].getRegistroFifa().equals(registroFifa)){
-                indice--;
-                treinador[i] = treinador[indice];
+            if (treinador[i].getRegistroFifa().equals(registroFifa)) {
+                this.indice--;
+                treinador[i] = treinador[this.indice];
+                i = treinador.length;
             }
         }
     }
@@ -85,7 +61,9 @@ public class RepositorioTreinadorArray implements RepositorioTreinadores{
         int auxIndice = getIndice();
         if(auxIndice != 0){
             for(int i = 0; i < auxIndice; i++){
-                return true;
+                if(treinador[i].getRegistroFifa().equals(registroFifa)){
+                    return true;
+                }
             }
         }
         return false;
