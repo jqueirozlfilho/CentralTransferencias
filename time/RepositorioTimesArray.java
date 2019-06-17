@@ -42,13 +42,7 @@ public class RepositorioTimesArray implements RepositorioTimes {
 				for (int j = i; i < times.length; j++) {
 					times[j] = times [j+1];
 				}
-				// atualizando o tamanho do array
-				Time [] newTimes = new Time [times.length -1];
-				for (int k = 0; k < newTimes.length; k++) {
-					newTimes[k] = times [k];
-				}
-				times = newTimes;
-				indice = times.length;
+				indice = indice-1;
 			}
 		}
 	}
