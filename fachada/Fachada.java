@@ -16,6 +16,10 @@ public class Fachada {
 	        //this.cadastroTreinadores = new CadastroTreinadores(repositorioTreinadores);
 	    }
 
+	    public Fachada (RepositorioTreinadores repositorioTreinadores){
+	    	this.cadastroTreinadores = new CadastroTreinadores(repositorioTreinadores);
+		}
+
 	    //Malu (Time)
 	    public void cadastrarTime (Time time) throws TimeJaCadastradoException {
 	        cadastroTimes.cadastrar(time);

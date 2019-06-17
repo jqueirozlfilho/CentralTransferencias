@@ -17,7 +17,6 @@ public class RepositorioTreinadorLista implements RepositorioTreinadores{
             this.treinador.setSalario(treinador.getSalario());
             this.treinador.setRegistroFifa(treinador.getRegistroFifa());
             this.treinador.setExperiencia(treinador.getExperiencia());
-            this.treinador.setTimeAtual(treinador.getTimeAtual());
             this.proximo = new RepositorioTreinadorLista();
         } else {
             this.proximo.inserir(treinador);
@@ -30,7 +29,6 @@ public class RepositorioTreinadorLista implements RepositorioTreinadores{
             this.treinador.setExperiencia(treinador.getExperiencia());
             this.treinador.setIdade(treinador.getIdade());
             this.treinador.setSalario(treinador.getSalario());
-            this.treinador.setTimeAtual(treinador.getTimeAtual());
         } else {
             this.proximo.atualizar(treinador);
         }
