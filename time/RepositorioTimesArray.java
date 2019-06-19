@@ -5,7 +5,7 @@ public class RepositorioTimesArray implements RepositorioTimes {
 	private int indice;
 	
 	public RepositorioTimesArray(int tam) {
-		this.times = new Time [10];
+		this.times = new Time [tam];
 		this.indice = 0;
 	}
 
@@ -67,7 +67,7 @@ public class RepositorioTimesArray implements RepositorioTimes {
 	public boolean existe(String nome) {
 		boolean achou = false;
 		for (int i = 0; i < times.length && achou == false; i++) {
-			if (nome.equals(times[i].getNome())) {
+			if (times[i].getNome().equals(nome)) {
 				achou = true;
 			}
 		}
