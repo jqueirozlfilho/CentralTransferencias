@@ -1,49 +1,56 @@
-package habilidade;
+package Habilidade;
 
-public class Habilidade {
+import jogador.Jogador;
+
+public class Habilidade extends Jogador {
 	
+	private String nomeJogador;
 	private double notaTotal;
 	private int finalizacao;
 	private int passe;
 	private int interceptacao;
-
-	public Habilidade() {
-
-		this.finalizacao = 0;
-		this.passe = 0;
-		this.interceptacao = 0;
+	
+	public Habilidade (int finalizacao, int passe, int interceptacao) {				
+		this.nomeJogador = "";
+		this.notaTotal = 0;	
+	}
+	
+	public String getNomeJogador() {
+		return this.nomeJogador;
+	}
+	
+	public int getFinalizacao() {
+		return this.finalizacao;
 	}
 
-
-	public int getfinalizacao() {
-		return finalizacao;
-	}
-
-	public void setfinalizacao(int finalizacao) {
+	public void setFinalizacao(int finalizacao) {
 		this.finalizacao=finalizacao;
 	}
 
-	public int getinterceptacao() {
+	public int getInterceptacao() {
 		return this.interceptacao;
 	}
 
-	public void setinterceptacao (int interceptacao) {
+	public void setInterceptacao (int interceptacao) {
 		this.interceptacao = interceptacao;
 	}
-
-	public int getpasse() {
-		return passe;
+	
+	public int getPasse() {
+		return this.passe;
 	}
-
-	public void setpasse(int passe) {
+	
+	public void setPasse(int passe) {
 		this.passe = passe;
-	}
+	}	
+	
+		public double getNotaTotal() {
+			this.finalizacao = 0;
+			this.passe = 0;
+			this.interceptacao = 0;
 
-	public double notaTotal(int interceptacao, int passe, int finalizacao) {
+			this.notaTotal=((this.interceptacao + this.passe+ this.finalizacao)/3);
+				return this.notaTotal;
 
-		notaTotal=((interceptacao+passe+finalizacao)/3);
-
-		return notaTotal;
-
-	}
+		}	
+	
 }
