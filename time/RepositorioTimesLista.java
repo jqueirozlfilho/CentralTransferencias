@@ -47,7 +47,7 @@ public class RepositorioTimesLista implements RepositorioTimes {
 	}
 
 	public boolean existe (String nome) {
-		if (nome.equals(this.time.getNome())) {
+		if (this.time.getNome().equals(nome)) {
 			return true;
 		} else if (this.next!= null){
 			return this.next.existe(nome);
